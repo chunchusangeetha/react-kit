@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced HTML Concepts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h2>ADVANCED HTML QUESTIONS</h2>
+
+    <h3>1. What are Semantic HTML elements and why are they important?</h3>
+    <p>
+        Semantic elements clearly describe their meaning to both the browser and developers.
+        Examples include: header, nav, section, article, aside, footer.
+    </p>
+    <p>
+        Benefits:
+    <ul>
+        <li>Improves SEO (search engines understand page structure)</li>
+        <li>Improves accessibility (screen readers interpret better)</li>
+        <li>Better code readability and maintainability</li>
+    </ul>
+    </p>
+
+    <h3>2. How does the browser render an HTML page?</h3>
+    <p>
+        Rendering process:
+    </p>
+    <ol>
+        <li>Browser parses HTML → Creates DOM (Document Object Model)</li>
+        <li>Browser parses CSS → Creates CSSOM</li>
+        <li>Combines DOM + CSSOM → Creates Render Tree</li>
+        <li>Layout (Calculates position and size)</li>
+        <li>Paint (Draws pixels on screen)</li>
+    </ol>
+    <p>
+        Blocking scripts can delay DOM creation, which affects performance.
+    </p>
+
+    <h3>3. What is the difference between defer and async in script?</h3>
+    <p>
+        Both are used to load JavaScript without blocking HTML parsing.
+    </p>
+
+    <ul>
+        <li><strong>defer:</strong> Downloads in parallel but executes after HTML parsing.</li>
+        <li><strong>async:</strong> Downloads in parallel and executes immediately when ready.</li>
+    </ul>
+
+    <pre>
+&lt;script src="app.js" defer&gt;&lt;/script&gt;
+&lt;script src="app.js" async&gt;&lt;/script&gt;
+</pre>
+
+    <h3>4. What is the difference between display:none and visibility:hidden?</h3>
+    <ul>
+        <li><strong>display:none</strong> → Removes element from layout (no space occupied).</li>
+        <li><strong>visibility:hidden</strong> → Element hidden but space remains.</li>
+    </ul>
+
+    <h3>5. What are void elements?</h3>
+    <p>
+        Void elements are self-closing elements that do not have closing tags.
+    </p>
+    <ul>
+        <li>img</li>
+        <li>br</li>
+        <li>hr</li>
+        <li>input</li>
+        <li>meta</li>
+    </ul>
+
+    <h3>6. What is the importance of the alt attribute?</h3>
+    <p>
+        The alt attribute:
+    </p>
+    <ul>
+        <li>Improves accessibility (screen readers read alt text)</li>
+        <li>Improves SEO</li>
+        <li>Displays fallback text if image fails</li>
+    </ul>
+
+    <h3>7. What is the difference between localStorage and sessionStorage?</h3>
+    <ul>
+        <li><strong>localStorage:</strong> Data persists even after browser close.</li>
+        <li><strong>sessionStorage:</strong> Data clears when tab is closed.</li>
+    </ul>
+
+    <h3>8. What is the difference between id and data-* attributes?</h3>
+    <p>
+        The id attribute uniquely identifies an element.
+        data-* attributes store custom data inside HTML.
+    </p>
+
+    <pre>
+&lt;div id="user" data-role="admin"&gt;&lt;/div&gt;
+</pre>
+
+    <h3>9. What is accessibility (a11y) in HTML?</h3>
+    <p>
+        Accessibility ensures websites are usable by people with disabilities.
+        Best practices:
+    </p>
+    <ul>
+        <li>Use semantic tags</li>
+        <li>Add alt attributes</li>
+        <li>Use label with input</li>
+        <li>Proper heading structure</li>
+    </ul>
+
+    <h3>10. What is ARIA in HTML?</h3>
+    <p>
+        ARIA (Accessible Rich Internet Applications) attributes improve accessibility
+        when semantic HTML is not sufficient.
+    </p>
+
+    <pre>
+&lt;button aria-label="Close Menu"&gt;X&lt;/button&gt;
+</pre>
+
+    <h3>11. What causes layout shift and how to prevent it?</h3>
+    <p>
+        Layout shift happens when elements change position during loading.
+        Causes:
+    </p>
+    <ul>
+        <li>Images without width and height</li>
+        <li>Dynamic content injection</li>
+    </ul>
+
+    <p>
+        Prevention:
+        Always define width and height for images.
+    </p>
+
+    <h3>12. What is the difference between inline, internal, and external CSS?</h3>
+    <ul>
+        <li><strong>Inline:</strong> Inside element (not recommended)</li>
+        <li><strong>Internal:</strong> Inside style tag</li>
+        <li><strong>External:</strong> Separate CSS file (recommended)</li>
+    </ul>
+
+    <h3>13. What is progressive enhancement?</h3>
+    <p>
+        Progressive enhancement means building the basic functionality first,
+        then adding advanced features for modern browsers.
+    </p>
+
+    <h3>14. How can we improve HTML page performance?</h3>
+    <ul>
+        <li>Minimize DOM size</li>
+        <li>Use lazy loading</li>
+        <li>Compress images (WebP)</li>
+        <li>Use defer for scripts</li>
+        <li>Avoid unnecessary nested divs</li>
+    </ul>
+
+    <h3>15. What is SEO and how does HTML affect it?</h3>
+    <p>
+        SEO (Search Engine Optimization) improves website ranking.
+        HTML helps SEO by:
+    </p>
+    <ul>
+        <li>Using proper heading structure</li>
+        <li>Adding meta description</li>
+        <li>Using semantic tags</li>
+        <li>Optimizing images</li>
+    </ul>
+</body>
+
+</html>

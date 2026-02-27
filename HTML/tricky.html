@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Tricky HTML Questions</title>
+</head>
+<body>
+    <h2>TRICKY HTML INTERVIEW QUESTIONS</h2>
+
+<h3>1. What happens if you forget to close an HTML tag?</h3>
+<p>
+Modern browsers automatically try to fix unclosed tags using their HTML parser.
+However, this can break layout unexpectedly because the browser may 
+restructure the DOM differently than intended.
+</p>
+<p>
+Example:
+</p>
+<pre>
+&lt;p&gt;Hello
+&lt;div&gt;World&lt;/div&gt;
+</pre>
+<p>
+The browser may automatically close the &lt;p&gt; tag before the &lt;div&gt;.
+Never rely on browser auto-correction.
+</p>
+
+
+<h3>2. Can we have multiple &lt;h1&gt; tags on a page?</h3>
+<p>
+Technically yes, HTML5 allows multiple h1 tags inside different sections.
+</p>
+<p>
+But for SEO best practice:
+<ul>
+<li>Use one main h1 per page</li>
+<li>Use h2, h3 for sub-sections</li>
+</ul>
+Search engines use heading hierarchy to understand content structure.
+</p>
+
+
+<h3>3. What is the difference between strong and b tags?</h3>
+<p>
+Both make text bold visually, but they are different semantically.
+</p>
+<ul>
+<li><strong>&lt;strong&gt;</strong> → Indicates importance (semantic meaning)</li>
+<li><strong>&lt;b&gt;</strong> → Only makes text bold (no semantic meaning)</li>
+</ul>
+<p>
+For accessibility and SEO, always prefer semantic tags.
+</p>
+
+
+<h3>4. Why should we always use label with input?</h3>
+<p>
+Associating label with input improves:
+</p>
+<ul>
+<li>Accessibility (screen readers read label)</li>
+<li>User experience (clicking label focuses input)</li>
+</ul>
+
+<pre>
+&lt;label for="email"&gt;Email&lt;/label&gt;
+&lt;input type="email" id="email"&gt;
+</pre>
+
+
+<h3>5. What is the difference between section and div?</h3>
+<p>
+&lt;div&gt; is a generic container with no meaning.
+&lt;section&gt; is a semantic element representing a thematic group of content.
+</p>
+<p>
+Use section when content has a clear heading and meaning.
+</p>
+
+
+<h3>6. Why should images always have width and height?</h3>
+<p>
+If width and height are not defined:
+</p>
+<ul>
+<li>Layout shift may occur</li>
+<li>Page performance score decreases</li>
+</ul>
+<p>
+Defining dimensions helps the browser reserve space before image loads.
+</p>
+
+
+<h3>7. What is the difference between id and name attribute?</h3>
+<ul>
+<li><strong>id:</strong> Used for CSS/JavaScript targeting (must be unique).</li>
+<li><strong>name:</strong> Used when submitting form data to server.</li>
+</ul>
+<p>
+Without name attribute, form data will not be sent to backend.
+</p>
+
+
+<h3>8. Why is using too many divs bad?</h3>
+<p>
+Excessive nested divs increase DOM size, which:
+</p>
+<ul>
+<li>Slows rendering</li>
+<li>Reduces performance</li>
+<li>Makes debugging harder</li>
+</ul>
+<p>
+Use semantic tags instead of unnecessary divs.
+</p>
+
+
+<h3>9. What happens if you put a block element inside an inline element?</h3>
+<p>
+Example:
+</p>
+<pre>
+&lt;span&gt;
+  &lt;div&gt;Hello&lt;/div&gt;
+&lt;/span&gt;
+</pre>
+<p>
+This is invalid HTML. Browsers automatically fix it by breaking the structure.
+It may cause unexpected layout behavior.
+</p>
+
+
+<h3>10. What is the difference between hidden attribute and display:none?</h3>
+<ul>
+<li><strong>hidden attribute:</strong> HTML-based, hides element.</li>
+<li><strong>display:none:</strong> CSS-based, removes element from layout.</li>
+</ul>
+<p>
+Both remove element visually, but hidden is semantic.
+</p>
+
+
+<h3>11. Why should meta charset be placed at top of head?</h3>
+<p>
+The browser reads character encoding early.
+If placed late, special characters may render incorrectly.
+</p>
+
+<pre>
+&lt;meta charset="UTF-8"&gt;
+</pre>
+
+
+<h3>12. What is the difference between disabled and readonly?</h3>
+<ul>
+<li><strong>disabled:</strong> Cannot edit and not submitted in form.</li>
+<li><strong>readonly:</strong> Cannot edit but value is submitted.</li>
+</ul>
+
+
+<h3>13. Why is using table for layout bad practice?</h3>
+<p>
+Tables are meant for tabular data.
+Using them for layout:
+</p>
+<ul>
+<li>Reduces accessibility</li>
+<li>Breaks responsive design</li>
+<li>Hard to maintain</li>
+</ul>
+<p>
+Use CSS Flexbox or Grid instead.
+</p>
+
+
+<h3>14. What is the difference between inline and inline-block?</h3>
+<ul>
+<li><strong>inline:</strong> Cannot set width/height.</li>
+<li><strong>inline-block:</strong> Can set width/height.</li>
+</ul>
+
+
+<h3>15. What happens if two elements have same id?</h3>
+<p>
+IDs must be unique.
+If duplicated:
+</p>
+<ul>
+<li>JavaScript may select only first match</li>
+<li>CSS behavior becomes unpredictable</li>
+<li>Accessibility issues occur</li>
+</ul>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description"
+        content="HTML5 media APIs questions about audio and video elements, media controls, formats, streaming, and accessibility." />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="author" content="Sangeetha" />
+    <title>HTML5 Media APIs Questions</title>
+</head>
+
+<body>
+    <h1> HTML5 APIs & Media</h2>
+
+        <h3>1. What is the Geolocation API?</h3>
+        <p>
+            Geolocation API allows websites to get user's location (with permission).
+        </p>
+        <pre>
+navigator.geolocation.getCurrentPosition(position => {
+  console.log(position.coords.latitude);
+});
+</pre>
+        <p>
+            Used in maps, delivery apps, ride booking systems.
+        </p>
+
+        <h3>2. What is Drag and Drop API?</h3>
+        <p>
+            Allows elements to be dragged and dropped.
+            Common in dashboards and file uploads.
+        </p>
+
+        <h3>3. Difference between Canvas and SVG?</h3>
+        <ul>
+            <li><strong>Canvas:</strong> Pixel-based, good for games & complex animations.</li>
+            <li><strong>SVG:</strong> Vector-based, good for icons & scalable graphics.</li>
+        </ul>
+
+        <h3>4. What is Web Storage API?</h3>
+        <ul>
+            <li><strong>localStorage:</strong> Persistent storage</li>
+            <li><strong>sessionStorage:</strong> Clears after tab closes</li>
+        </ul>
+
+        <h3>5. What is Web Workers?</h3>
+        <p>
+            Allows JavaScript to run in background thread.
+            Prevents UI blocking.
+        </p>
+
+        <h3>6. What is the difference between audio and video tags?</h3>
+        <pre>
+&lt;video controls width="400"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+</pre>
+        <p>
+            HTML5 supports native media playback without plugins.
+        </p>
+</body>
+
+</html>

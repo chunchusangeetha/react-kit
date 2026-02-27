@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html basics</title>
+</head>
+
+<body>
+    <h2>BASIC HTML QUESTIONS</h2>
+
+    <h3>1. What is HTML?</h3>
+    <p>
+        HTML (HyperText Markup Language) is the standard markup language used to create and structure web pages.
+        It defines the structure of content using elements like headings, paragraphs, images, links, and forms.
+        HTML does not handle styling (CSS does) or logic (JavaScript does).
+    </p>
+
+    <h3>2. What is a Tag?</h3>
+    <p>
+        A tag is a keyword enclosed inside angle brackets (&lt; &gt;).
+        It tells the browser how to display content.
+    </p>
+    <pre>
+&lt;p&gt;Paragraph&lt;/p&gt;
+</pre>
+    <p>
+        Here, &lt;p&gt; is the opening tag and &lt;/p&gt; is the closing tag.
+    </p>
+
+    <h3>3. What is an Element?</h3>
+    <p>
+        An HTML element consists of an opening tag, content, and a closing tag.
+        Everything from the start tag to the end tag is called an element.
+    </p>
+    <pre>
+&lt;p&gt;Hello World&lt;/p&gt;
+</pre>
+
+    <h3>4. What is an Attribute?</h3>
+    <p>
+        An attribute provides additional information about an element.
+        Attributes are written inside the opening tag.
+    </p>
+    <pre>
+&lt;a href="https://example.com"&gt;Visit&lt;/a&gt;
+</pre>
+    <p>
+        Here, <strong>href</strong> is an attribute that defines the link destination.
+    </p>
+
+    <h3>5. What is the basic structure of an HTML document?</h3>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    Content goes here
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+    <p>
+        Every HTML document starts with DOCTYPE, followed by html, head, and body sections.
+    </p>
+
+    <h3>6. What is &lt;!DOCTYPE html&gt;?</h3>
+    <p>
+        It tells the browser that the document is written in HTML5.
+        Without it, browsers may render the page in quirks mode.
+    </p>
+
+    <h3>7. What is the difference between block and inline elements?</h3>
+    <p>
+        Block elements take the full width available and start on a new line.
+        Inline elements take only the necessary width and do not start on a new line.
+    </p>
+    <ul>
+        <li><strong>Block:</strong> div, p, h1</li>
+        <li><strong>Inline:</strong> span, a, img</li>
+    </ul>
+
+    <h3>8. What are heading tags?</h3>
+    <p>
+        HTML provides six heading tags from h1 to h6.
+        h1 is the most important (used for main title), and h6 is the least important.
+    </p>
+
+    <h3>9. What is a paragraph tag?</h3>
+    <p>
+        The paragraph tag (&lt;p&gt;) is used to define a paragraph of text.
+    </p>
+
+    <h3>10. What is an anchor tag?</h3>
+    <p>
+        The anchor tag (&lt;a&gt;) is used to create hyperlinks.
+    </p>
+    <pre>
+&lt;a href="https://google.com"&gt;Google&lt;/a&gt;
+</pre>
+
+    <h3>11. What is the img tag?</h3>
+    <p>
+        The image tag is used to display images on a webpage.
+        It is a self-closing (void) element.
+    </p>
+    <pre>
+&lt;img src="image.jpg" alt="profile"&gt;
+</pre>
+
+    <h3>12. What is the difference between absolute and relative paths?</h3>
+    <p>
+        An absolute path includes the full URL.
+        A relative path refers to a file location within the project.
+    </p>
+
+    <h3>13. What are lists in HTML?</h3>
+    <p>
+        Lists are used to group related items.
+    </p>
+    <ul>
+        <li>Ordered List (ol) – numbered</li>
+        <li>Unordered List (ul) – bullet points</li>
+        <li>List items (li)</li>
+    </ul>
+
+    <h3>14. What is a table?</h3>
+    <p>
+        A table is used to display data in rows and columns.
+    </p>
+    <pre>
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Sangeetha&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+
+    <h3>15. What is a form?</h3>
+    <p>
+        A form is used to collect user input and send data to a server.
+    </p>
+    <pre>
+&lt;form&gt;
+  &lt;input type="text"&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+
+    <h3>16. What are common input types?</h3>
+    <ul>
+        <li>text</li>
+        <li>password</li>
+        <li>email</li>
+        <li>number</li>
+        <li>radio</li>
+        <li>checkbox</li>
+    </ul>
+
+    <h3>17. What is the difference between id and class?</h3>
+    <p>
+        The id attribute must be unique within a page.
+        The class attribute can be used multiple times.
+    </p>
+
+    <h3>18. What is the alt attribute in img?</h3>
+    <p>
+        The alt attribute provides alternative text if the image fails to load.
+        It is important for accessibility and SEO.
+    </p>
+
+    <h3>19. What is the title tag?</h3>
+    <p>
+        The title tag defines the page title shown in the browser tab and search engine results.
+    </p>
+
+    <h3>20. What is the difference between HTML and HTML5?</h3>
+    <p>
+        HTML5 introduced new semantic elements (header, footer, section),
+        audio and video support, new input types, and improved APIs.
+    </p>
+</body>
+
+</html>

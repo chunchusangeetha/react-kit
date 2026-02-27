@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description"
+        content="Deep HTML questions about browser rendering internals, critical rendering path, reflow, repaint, and performance optimization." />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="author" content="Sangeetha" />
+    <title>Deep HTML Questions</title>
+</head>
+
+<body>
+    <h1>Deep Browser Rendering Internals</h1>
+
+    <h3>1. What happens when you type a URL in the browser and press Enter?</h3>
+
+    <p><strong>Step 1: DNS Lookup</strong></p>
+    <p>
+        The browser converts the domain name (example.com) into an IP address
+        using DNS (Domain Name System).
+    </p>
+
+    <p><strong>Step 2: TCP Connection</strong></p>
+    <p>
+        The browser establishes a TCP connection with the server
+        (using 3-way handshake).
+    </p>
+
+    <p><strong>Step 3: HTTPS Handshake (if secure)</strong></p>
+    <p>
+        If the site uses HTTPS, SSL/TLS handshake happens
+        to encrypt communication.
+    </p>
+
+    <p><strong>Step 4: HTTP Request</strong></p>
+    <p>
+        Browser sends an HTTP request to the server.
+    </p>
+
+    <p><strong>Step 5: Server Response</strong></p>
+    <p>
+        Server sends back HTML, CSS, JS, images.
+    </p>
+
+
+
+    <h3>2. How does browser convert HTML into a page?</h3>
+
+    <p><strong>Step 1: HTML Parsing → DOM Creation</strong></p>
+    <p>
+        The browser reads HTML line by line and builds a tree structure
+        called the DOM (Document Object Model).
+    </p>
+
+    <p><strong>Step 2: CSS Parsing → CSSOM Creation</strong></p>
+    <p>
+        CSS files are parsed to create CSSOM (CSS Object Model).
+    </p>
+
+    <p><strong>Step 3: JavaScript Execution</strong></p>
+    <p>
+        If a script is encountered:
+    </p>
+    <ul>
+        <li>Without defer/async → HTML parsing pauses</li>
+        <li>With defer → Executes after parsing</li>
+        <li>With async → Executes immediately when ready</li>
+    </ul>
+
+    <p><strong>Step 4: Render Tree Creation</strong></p>
+    <p>
+        Browser combines DOM + CSSOM to create Render Tree.
+        Only visible elements are included.
+        (display:none elements are excluded.)
+    </p>
+
+    <p><strong>Step 5: Layout (Reflow)</strong></p>
+    <p>
+        Browser calculates exact size and position of each element.
+        This is expensive operation.
+    </p>
+
+    <p><strong>Step 6: Paint</strong></p>
+    <p>
+        Browser converts layout into pixels and paints on screen.
+    </p>
+
+    <p><strong>Step 7: Compositing</strong></p>
+    <p>
+        Layers are combined and GPU may be used
+        for faster rendering (especially animations).
+    </p>
+
+
+
+    <h3>3. What is Reflow and Repaint?</h3>
+
+    <p><strong>Reflow (Layout):</strong></p>
+    <p>
+        Occurs when changes affect layout structure.
+        Example:
+        - Changing width
+        - Adding/removing element
+        - Changing font size
+    </p>
+
+    <p>
+        Reflow is expensive because it recalculates layout for entire or large part of page.
+    </p>
+
+    <p><strong>Repaint:</strong></p>
+    <p>
+        Occurs when visual styles change but layout doesn't change.
+        Example:
+        - Changing background color
+        - Changing visibility
+    </p>
+
+    <p>
+        Repaint is cheaper than reflow.
+    </p>
+
+
+
+    <h3>4. What causes layout thrashing?</h3>
+
+    <p>
+        Layout thrashing happens when JavaScript repeatedly reads layout
+        properties and writes changes in a loop.
+    </p>
+
+    <p>
+        Example:
+    </p>
+
+    <pre>
+element.style.width = "100px";
+console.log(element.offsetWidth);
+element.style.width = "200px";
+</pre>
+
+    <p>
+        Reading offsetWidth forces layout recalculation.
+        Doing this repeatedly hurts performance.
+    </p>
+
+
+
+    <h3>5. How to optimize rendering performance?</h3>
+
+    <ul>
+        <li>Minimize DOM size</li>
+        <li>Avoid deep nested elements</li>
+        <li>Use transform and opacity for animations</li>
+        <li>Use will-change carefully</li>
+        <li>Batch DOM reads and writes</li>
+        <li>Use requestAnimationFrame</li>
+    </ul>
+
+
+
+    <h3>6. What is Critical Rendering Path?</h3>
+
+    <p>
+        Critical Rendering Path is the sequence of steps
+        browser goes through to convert HTML, CSS, JS into pixels.
+    </p>
+
+    <p>
+        Optimizing CRP improves:
+    </p>
+    <ul>
+        <li>First Contentful Paint (FCP)</li>
+        <li>Largest Contentful Paint (LCP)</li>
+        <li>Cumulative Layout Shift (CLS)</li>
+    </ul>
+
+
+
+    <h3>7. Why is CSS render-blocking?</h3>
+
+    <p>
+        Browser must download and parse CSS before rendering
+        because it needs styling information for layout.
+    </p>
+
+    <p>
+        If CSS is large or slow, rendering is delayed.
+    </p>
+
+
+
+    <h3>8. Why is JavaScript parser-blocking?</h3>
+
+    <p>
+        When browser encounters script tag (without async/defer),
+        it pauses HTML parsing to execute JavaScript.
+    </p>
+
+    <p>
+        Because JS can modify DOM, browser must wait.
+    </p>
+
+
+
+    <h3>9. What is GPU compositing?</h3>
+
+    <p>
+        Modern browsers use GPU to render layers separately
+        (for example, animations using transform).
+    </p>
+
+    <p>
+        Properties like:
+    </p>
+    <ul>
+        <li>transform</li>
+        <li>opacity</li>
+    </ul>
+
+    <p>
+        trigger compositing without reflow.
+        This improves animation performance.
+    </p>
+
+
+
+    <h3>10. What is Shadow DOM?</h3>
+
+    <p>
+        Shadow DOM allows encapsulation of HTML and CSS.
+        Used in Web Components.
+    </p>
+
+    <p>
+        Styles inside shadow DOM do not affect outside elements.
+    </p>
+
+    <h3>11. What is ARIA?</h3>
+    <p>
+        ARIA (Accessible Rich Internet Applications) improves accessibility
+        when semantic HTML is not enough.
+    </p>
+    <pre>
+&lt;button aria-expanded="false"&gt;Menu&lt;/button&gt;
+</pre>
+
+    <h3>12. What is role attribute?</h3>
+    <p>
+        Defines the purpose of an element for screen readers.
+    </p>
+    <pre>
+&lt;div role="button"&gt;Click&lt;/div&gt;
+</pre>
+
+    <h3>13. What is tabindex?</h3>
+    <p>
+        Controls keyboard navigation order.
+    </p>
+
+    <h3>14. What is XSS?</h3>
+    <p>
+        Cross-Site Scripting is a security vulnerability
+        where attackers inject malicious scripts.
+    </p>
+    <p>
+        Prevent using:
+        - Proper escaping
+        - Content Security Policy (CSP)
+    </p>
+
+    <h3>15. What is Content Security Policy (CSP)?</h3>
+    <pre>
+&lt;meta http-equiv="Content-Security-Policy"
+content="default-src 'self'"&gt;
+</pre>
+    <p>
+        Restricts which sources can load scripts.
+    </p>
+
+    <h3>16. Why use rel="noopener noreferrer"?</h3>
+    <p>
+        Prevents security vulnerability when using target="_blank".
+    </p>
+
+    <h3>17. What is iframe sandbox?</h3>
+    <pre>
+&lt;iframe src="page.html" sandbox&gt;&lt;/iframe&gt;
+</pre>
+    <p>
+        Restricts iframe capabilities for security.
+    </p>
+    <h3>18. What is Preload vs Prefetch?</h3>
+    <ul>
+        <li><strong>Preload:</strong> Load important resource immediately.</li>
+        <li><strong>Prefetch:</strong> Load resource for future navigation.</li>
+    </ul>
+
+    <pre>
+&lt;link rel="preload" href="style.css" as="style"&gt;
+&lt;link rel="prefetch" href="next-page.html"&gt;
+</pre>
+
+    <h3>19. What is srcset and picture?</h3>
+    <p>
+        Used for responsive images.
+    </p>
+
+    <pre>
+&lt;img src="small.jpg"
+     srcset="large.jpg 1024w, medium.jpg 768w"
+     sizes="(max-width: 600px) 480px, 800px"
+     alt="Example"&gt;
+</pre>
+
+    <h3>20. What is robots meta tag?</h3>
+    <pre>
+&lt;meta name="robots" content="index, follow"&gt;
+</pre>
+
+    <h3>21. What is JSON-LD structured data?</h3>
+    <p>
+        Used to provide structured data for search engines.
+    </p>
+
+    <h3>22. What is preconnect?</h3>
+    <pre>
+&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+</pre>
+    <p>
+        Improves performance by establishing early connection.
+    </p>
+
+    <h3>23. What is DNS-prefetch?</h3>
+    <pre>
+&lt;link rel="dns-prefetch" href="//example.com"&gt;
+</pre>
+    <p>
+        Resolves domain early before actual request.
+    </p>
+</body>
+
+</html>
