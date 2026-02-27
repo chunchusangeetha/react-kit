@@ -17,3 +17,15 @@ This module covers:
 ---
 
 ##  Project Structure
+react-kit/
+│
+├── HTML/
+│ ├── index.html
+│ ├── welcome.html
+│ ├── basic.html
+│ ├── advanced.html
+│ ├── tricky.html
+│ ├── deep.html
+│ └── html5api.html
+│
+└── README.md
