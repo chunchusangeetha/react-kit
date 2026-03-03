@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>CSS Tricky Interview Round</title>
+</head>
+
+<body>
+
+    <h1>CSS Tricky Interview Questions (Senior → Mid-Level)</h1>
+
+    <h2>1. Why is position: sticky not working?</h2>
+    <p>
+        Sticky works only when the element has a defined top, left, right, or bottom value.
+        It also fails if any parent has overflow: hidden, scroll, or auto.
+    </p>
+    <p>
+        In real-world layouts, sticky headers often fail because a wrapper div has overflow:hidden for layout control.
+    </p>
+
+
+
+    <h2>2. Why is z-index not working even after setting a high value?</h2>
+    <p>
+        z-index only works on positioned elements (relative, absolute, fixed, sticky).
+        Also, if a parent creates a new stacking context using transform or opacity, the child cannot escape it.
+    </p>
+    <p>
+        This commonly happens when modals appear behind other components.
+    </p>
+
+
+
+    <h2>3. Why is percentage height not working?</h2>
+    <p>
+        Percentage height depends on the parent’s defined height.
+        If the parent height is auto, the percentage value has no reference.
+    </p>
+    <p>
+        This often breaks full-height layouts inside nested containers.
+    </p>
+
+
+
+    <h2>4. Why are flex items overflowing unexpectedly?</h2>
+    <p>
+        By default, flex items have min-width: auto, which prevents shrinking.
+        Setting min-width: 0 allows proper shrinking.
+    </p>
+    <p>
+        This commonly affects text content inside flex containers.
+    </p>
+
+
+
+    <h2>5. Why does 100vh cause layout issues on mobile?</h2>
+    <p>
+        Mobile browsers include the address bar in viewport height calculation.
+        When the bar hides or shows, layout jumps.
+    </p>
+    <p>
+        Modern solution: use 100dvh instead of 100vh.
+    </p>
+
+
+
+    <h2>6. Why is margin-top not working on inline elements?</h2>
+    <p>
+        Inline elements ignore vertical margins.
+        To apply vertical spacing, convert them to inline-block or block.
+    </p>
+
+
+
+    <h2>7. Why does text-overflow: ellipsis not work?</h2>
+    <p>
+        For ellipsis to work, the element must have:
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    </p>
+    <p>
+        This often fails because width is not defined.
+    </p>
+
+
+
+    <h2>8. Why is absolute element positioned incorrectly?</h2>
+    <p>
+        Absolute positioning is relative to the nearest positioned ancestor.
+        If no parent has position: relative, it attaches to the body.
+    </p>
+
+
+
+    <h2>9. Why is fixed position not behaving like fixed?</h2>
+    <p>
+        If a parent has transform, it creates a new containing block.
+        The fixed element behaves like absolute inside that parent.
+    </p>
+
+
+
+    <h2>10. Why is there unexpected extra space below images?</h2>
+    <p>
+        Images are inline elements by default.
+        They align with text baseline, creating small bottom gap.
+    </p>
+    <p>
+        Solution: set display: block or vertical-align: middle.
+    </p>
+
+
+
+    <h2>11. Why does 100vw create horizontal scroll?</h2>
+    <p>
+        100vw includes scrollbar width.
+        This adds extra width causing horizontal scroll.
+    </p>
+    <p>
+        Better to use width: 100% for full-width layouts.
+    </p>
+
+
+
+    <h2>12. Why is transition not smooth?</h2>
+    <p>
+        Animating layout properties like width or height triggers reflow.
+        Animating transform or opacity is smoother because it uses GPU.
+    </p>
+
+
+
+    <h2>13. Why are grid items overlapping?</h2>
+    <p>
+        If grid-column or grid-row values overlap explicitly, elements stack.
+        Incorrect grid-template definitions also cause this.
+    </p>
+
+
+
+    <h2>14. Why is overflow not scrolling?</h2>
+    <p>
+        Overflow works only if container has fixed height or width.
+        If height is auto, scroll won't appear.
+    </p>
+
+
+
+    <h2>15. Why are margins not applying between flex children?</h2>
+    <p>
+        Flexbox does not collapse margins like block layout.
+        Spacing issues often require gap property instead.
+    </p>
+
+
+
+    <h2>16. Why is background not covering entire element?</h2>
+    <p>
+        Background images require background-size: cover to fill container.
+        Without it, image may repeat or stretch incorrectly.
+    </p>
+
+
+
+    <h2>17. Why does ::before not appear?</h2>
+    <p>
+        Pseudo-elements require content property.
+        Without content: "", they won’t render.
+    </p>
+
+
+
+    <h2>18. Why is position: sticky working only inside one section?</h2>
+    <p>
+        Sticky works within the scrollable parent container.
+        If parent doesn’t scroll, sticky won’t activate.
+    </p>
+
+
+
+    <h2>19. Why is flex: 1 behaving unexpectedly?</h2>
+    <p>
+        flex: 1 is shorthand for flex: 1 1 0.
+        Developers often misunderstand flex-basis value.
+    </p>
+
+
+
+    <h2>20. Why is CSS not applying at all?</h2>
+    <p>
+        Common reasons:
+        Wrong selector,
+        Specificity conflict,
+        File not linked correctly,
+        Browser cache issue.
+    </p>
+    <p>
+        As a mid-level dev, you should systematically debug using DevTools.
+    </p>
+
+</body>
+
+</html>
