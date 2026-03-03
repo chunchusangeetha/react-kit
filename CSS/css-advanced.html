@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>CSS Advanced Interview Round</title>
+</head>
+<body>
+
+<h1>CSS Advanced Interview Round</h1>
+
+<h2>1. Difference between Flexbox and Grid?</h2>
+<p>
+Flexbox is designed for one-dimensional layouts (row or column).
+Grid is two-dimensional and controls both rows and columns.
+</p>
+<p>
+Dashboards and complex layouts benefit more from Grid.
+</p>
+
+<h2>2. Explain flex-grow, flex-shrink, flex-basis.</h2>
+<p>
+flex-grow defines how much space an item can take.
+flex-shrink defines how it shrinks.
+flex-basis defines initial size before growing.
+</p>
+
+<h2>3. What is stacking context?</h2>
+<p>
+Stacking context determines how elements stack visually.
+It is created by properties like transform, opacity, and position with z-index.
+</p>
+
+<h2>4. What causes reflow?</h2>
+<p>
+Reflow occurs when layout changes (width, height, font-size).
+It forces the browser to recalculate positions.
+</p>
+
+<h2>5. What causes repaint?</h2>
+<p>
+Repaint occurs when visual properties change without affecting layout.
+Example: color or background change.
+</p>
+
+<h2>6. Why animate transform instead of width?</h2>
+<p>
+Transform animations use GPU acceleration.
+Animating width triggers layout recalculations.
+</p>
+
+<h2>7. What is CSS containment?</h2>
+<p>
+contain property limits layout and paint calculations.
+It improves performance in complex components.
+</p>
+
+<h2>8. What is clamp()?</h2>
+<p>
+clamp() allows responsive values without media queries.
+It defines minimum, preferred, and maximum values.
+</p>
+
+<h2>9. What is aspect-ratio?</h2>
+<p>
+aspect-ratio ensures consistent proportional resizing.
+Useful for images and video containers.
+</p>
+
+<h2>10. What are CSS variables?</h2>
+<p>
+CSS variables allow dynamic theming.
+They are defined using --name and accessed using var().
+</p>
+
+<h2>11. What are logical properties?</h2>
+<p>
+Logical properties like margin-inline support different writing modes.
+They improve internationalization.
+</p>
+
+<h2>12. What is object-fit?</h2>
+<p>
+object-fit controls how images scale inside containers.
+cover maintains aspect ratio while filling space.
+</p>
+
+<h2>13. What is pointer-events?</h2>
+<p>
+pointer-events controls mouse interaction.
+Used to disable clicks on overlays.
+</p>
+
+<h2>14. What is backdrop-filter?</h2>
+<p>
+backdrop-filter applies blur effects.
+Common in glassmorphism UI designs.
+</p>
+
+<h2>15. Explain BEM methodology.</h2>
+<p>
+BEM stands for Block, Element, Modifier.
+It improves maintainability in large projects.
+</p>
+
+</body>
+</html>

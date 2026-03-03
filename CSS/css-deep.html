@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>CSS Deep Round</title>
+</head>
+
+<body>
+
+    <h1>CSS Deep Technical Round</h1>
+
+    <h2>1. Explain Critical Rendering Path.</h2>
+    <p>
+        Browser builds DOM and CSSOM.
+        They combine to form Render Tree.
+        Layout and Paint phases render pixels.
+    </p>
+
+    <h2>2. What is layout thrashing?</h2>
+    <p>
+        Repeated DOM reads and writes causing multiple reflows.
+        It significantly reduces performance.
+    </p>
+
+    <h2>3. What is compositing?</h2>
+    <p>
+        Compositing merges painted layers into final screen output.
+        GPU layers improve performance.
+    </p>
+
+    <h2>4. What is will-change?</h2>
+    <p>
+        will-change hints browser about upcoming changes.
+        Overuse can cause memory issues.
+    </p>
+
+    <h2>5. What is content-visibility?</h2>
+    <p>
+        content-visibility:auto skips rendering off-screen content.
+        Improves large list performance.
+    </p>
+
+    <h2>6. What is CSSOM?</h2>
+    <p>
+        CSSOM is CSS Object Model built from stylesheets.
+        It combines with DOM to create render tree.
+    </p>
+
+    <h2>7. Why inline critical CSS?</h2>
+    <p>
+        Inlining critical CSS reduces render-blocking resources.
+        Improves First Contentful Paint.
+    </p>
+
+    <h2>8. What creates new stacking context?</h2>
+    <p>
+        opacity < 1, transform, filter, isolation, position + z-index. </p>
+
+            <h2>9. What is paint containment?</h2>
+            <p>
+                Limits repaint area.
+                Improves rendering efficiency.
+            </p>
+
+            <h2>10. What is subgrid?</h2>
+            <p>
+                subgrid allows nested grid items to align with parent grid.
+                Useful in complex layouts.
+            </p>
+
+
+</body>
+
+</html>

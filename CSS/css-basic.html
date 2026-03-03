@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>CSS Basic Interview Round</title>
+</head>
+<body>
+
+<h1>CSS Basic Interview Round (Senior → Mid-Level)</h1>
+
+<h2>1. Explain the CSS Box Model in detail.</h2>
+<p>
+The CSS Box Model consists of content, padding, border, and margin. 
+By default (content-box), the width and height apply only to the content area, and padding/border increase total size.
+</p>
+<p>
+In real-world layouts like cards or form inputs, forgetting box-sizing: border-box can break alignment because padding increases element size unexpectedly.
+</p>
+
+<h2>2. What is CSS specificity and how is it calculated?</h2>
+<p>
+Specificity determines which CSS rule gets applied when multiple rules target the same element. 
+Inline styles have highest priority, followed by IDs, classes, and then element selectors.
+</p>
+<p>
+In large applications, misunderstanding specificity leads to overuse of !important, which creates maintenance problems.
+</p>
+
+<h2>3. Explain difference between relative and absolute positioning.</h2>
+<p>
+Relative positioning keeps the element in normal document flow but allows offset movement.
+Absolute positioning removes the element from flow and positions it relative to the nearest positioned ancestor.
+</p>
+<p>
+For example, notification badges on cart icons use absolute positioning inside a relative parent.
+</p>
+
+<h2>4. Why does z-index sometimes not work?</h2>
+<p>
+z-index only works on positioned elements and is affected by stacking contexts.
+If a parent creates a new stacking context (via transform or opacity), child z-index cannot escape it.
+</p>
+
+<h2>5. Explain margin collapsing.</h2>
+<p>
+When two vertical margins meet, the larger margin wins instead of adding together.
+This happens only for vertical margins in block-level elements.
+</p>
+<p>
+This often causes confusion when spacing sections in landing pages.
+</p>
+
+<h2>6. What is the difference between em and rem?</h2>
+<p>
+em units are relative to the parent’s font-size, while rem is relative to the root (html) font-size.
+Using em inside deeply nested components can cause unexpected scaling issues.
+</p>
+
+<h2>7. What is overflow and when is it used?</h2>
+<p>
+Overflow controls what happens when content exceeds container size.
+Common values are hidden, scroll, and auto.
+</p>
+<p>
+Chat windows and dropdown menus commonly use overflow:auto.
+</p>
+
+<h2>8. Explain display: none vs visibility: hidden.</h2>
+<p>
+display:none removes the element completely from layout flow.
+visibility:hidden hides the element visually but still occupies space.
+</p>
+
+<h2>9. What is inheritance in CSS?</h2>
+<p>
+Some properties like color and font-family inherit automatically from parent elements.
+Layout properties like margin or padding do not inherit.
+</p>
+
+<h2>10. What is the cascade in CSS?</h2>
+<p>
+Cascade determines final styles based on origin, importance, specificity, and source order.
+Understanding cascade helps debug style conflicts efficiently.
+</p>
+
+<h2>11. What are pseudo-classes?</h2>
+<p>
+Pseudo-classes like :hover and :focus define element states.
+They are widely used for user interaction styling.
+</p>
+
+<h2>12. What are pseudo-elements?</h2>
+<p>
+Pseudo-elements like ::before and ::after create virtual elements.
+They are used for decorative UI elements without extra HTML.
+</p>
+
+<h2>13. What are vh and vw units?</h2>
+<p>
+vh and vw are viewport-based units.
+100vh represents full viewport height.
+</p>
+<p>
+On mobile, dynamic address bars may affect vh calculations.
+</p>
+
+<h2>14. What is box-sizing and why use border-box?</h2>
+<p>
+box-sizing controls how width and height are calculated.
+border-box ensures padding and border are included inside declared width.
+</p>
+
+<h2>15. How do you center a div using modern CSS?</h2>
+<p>
+Flexbox and Grid are preferred for centering.
+Flex uses justify-content and align-items.
+Grid uses place-items:center.
+</p>
+
+</body>
+</html>
