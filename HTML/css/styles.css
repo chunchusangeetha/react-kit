@@ -1,0 +1,163 @@
+:root {
+    /* Light Theme (Default) */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f5;
+    --bg-sidebar: #f0f0f0;
+    --bg-footer: #e5e5e5;
+
+    --text-primary: #000000;
+    --text-secondary: #555555;
+
+    --accent-color: #2563eb;
+    --hover-bg: #e0e0e0;
+    --text-primary: #000000;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-primary);
+}
+
+.header__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header__title {
+    font-size: 1.8rem;
+}
+
+.header__subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+
+.layout {
+    display: flex;
+    flex: 1;
+}
+
+
+.sidebar {
+    width: 250px;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: var(--bg-sidebar);
+}
+
+.sidebar__title {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.sidebar__list {
+    list-style: none;
+}
+
+.sidebar__item {
+    margin-bottom: 10px;
+}
+
+.sidebar__link {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--text-primary);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar__link:hover,
+.sidebar__link:focus {
+    background-color: var(--hover-bg);
+    outline: none;
+}
+
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: var(--bg-secondary);
+    display: flex;
+}
+
+.content__frame {
+    flex: 1;
+    border: none;
+    background-color: var(--bg-primary);
+}
+
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--bg-footer);
+    color: var(--text-primary);
+}
+
+
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .header,
+    .sidebar,
+    .content,
+    .footer {
+        padding: 10px;
+    }
+}
+
+
+body,
+.header,
+.sidebar,
+.content,
+.footer {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
