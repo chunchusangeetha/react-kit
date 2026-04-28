@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        #top {
+            border: 10px solid red;
+            padding: 10px;
+            width: 0 auto;
+            text-align: center;
+        }
+
+        #mid-div {
+            border: 10px solid blue;
+            padding: 10px;
+            width: 0 auto;
+            text-align: center;
+        }
+
+        #inner-div {
+            border: 10px solid rgb(179, 41, 119);
+            padding: 10px;
+            width: 0 auto;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Welcome to js</h1>
+
+    <h2> ##Event doubling(inner to outer) and capaturing(outer to inner most)</h2>
+
+    <div id="top">Outer Div
+        <div id="mid-div">Mid Div
+            <div id="inner-div">Inner Div</div>
+        </div>
+    </div>
+
+    <h2>##Higher order function(a function that can either takes onther function as parameter or returns a function as
+        arugment </h2>
+
+    <h2>##IIFE(immediately invoked function expression)</h2>
+
+    <h2>##Closure(inner fun remeber outer variables even outer function finished the execution)</h2>
+
+    <h2>## setTimeout,setInterval</h2>
+
+    <h2>## promises</h2>
+    <p>handle asyn tasks in js by providing a more reaable and structured approch than callbacks for handlimng output.
+        pending,fulfilled,reject
+    </p>
+
+    <h2>### async and await</h2>
+    <p>async - delcearing a function using async makes it return a promise</p>
+    <p>await - it pasues the execution of the code until the promise its waiting for is ressolved,then return the
+        resolved value</p>
+
+    <h2>## call,apply and bind</h2>
+    <p>call - invokes the func immediatley,with this set to thisarg,and accepts argu one by one </p>
+    <p>apply - invokes the func immediatley, with this set to thisArg,but takes args as an array</p>
+    <p>bind - returns new fun with set to thisargs,and any preset arg ,but doesnot invoke it immediatly</p>
+
+    <h2>## Event Delegation</h2>
+    <p>single event listner on a common parent rather than on each children</p>
+    <p>improve performance,handle dynamic elements,cleaner code</p>
+
+    <div id="box">
+        <ul id="itemlist">
+            <li>1 helo</li>
+            <li>2 hey</li>
+            <li>3 hi</li>
+        </ul>
+
+    </div>
+
+    <h2>## event loop</h2>
+
+    <h2>async/wait with promise</h2>
+
+    <h2>## reduce</h2>
+    <p>used to  reduce an array to single value by applying a function on each elem in the arr</p>
+
+    <h2> ## currying</h2>
+    <p>Transformed multiple arg into sequenc of functions,each accepting a singele arg</p>
+
+    <h2>## generator function</h2>
+    <p>gen fun in js is special type of fun that can pause its execution and resume it later</p>
+
+    <h2>## weak maps and weak sets</h2>
+
+    <p> weakmap  is collection of key value pairs where the keys are required to be objects</p>
+    <p>weaksets - collection of unique obj reference that only stores obj and does not allow any primitives</p>
+<p>Both are non-iterable,have no size property,and are ideal for temporary data sttorage and memory -effircinet mangemnet of obj</p>
+
+<h2>## memory management</h2>
+
+<p>1.memomry allocation</p>
+<p>
+    1.stack(num,strings,bool,null,undefine) 2.heap(obj,arr,fun)
+</p>
+<p>2.garbage collection</p>
+<p>
+    1.variables(variables -name,fla,data)
+    2.reference(values - null(marked - empty),"sangeetha",19)
+</p>
+
+<h2>## shallow,deep copies</h2>
+<p>Shallow - the main prop are copied,but any nestedd obj or arrays are still linked to the original </p>
+<p>Deep - every copy of obj,including all nested obj or arras is fully copied,ensuring the modification to the copy doesnt affect the original  </p>
+
+<h2>### "use strict"</h2>
+<p>Todo undecleared variables</p>
+<p>todo read-only properties</p>
+<p> this as global obj - undefined</p>
+<p> Eliminate with  with(math)-error/ normal - get sin(90)</p>
+<p> secures eval</p>
+<p>duplicate in fun</p>
+
+<h2>## prototype<
+/h2>
+<p>f prototype in JavaScript as a built-in mechanism for sharing properties and methods between objects.</p>
+<p>Prototype chaining is the mechanism by which JavaScript objects inherit properties and methods from other objects through the prototype chain.</p>
+
+<h2>## Debounce</h2>
+<p>Debouncing is a technique that delays the execution of a function until after a specified delay has passed since the last time the event was triggered.</p>
+
+
+<h2>## throttling</h2>
+<p>Throttling is a technique that ensures a function is executed at most once in a specified time interval, regardless of how many times the event is triggered.</p>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
