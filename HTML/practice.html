@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>CSS Practice</title>
+    <style>
+         .boxes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            column-gap: 10px;
+        } 
+        /* .boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            height: 100vh;
+            place-items: center;
+        } */
+
+        .box {
+            flex: 1;
+            max-width: 200px;
+            /* width: 200px; for grid*/
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #box-1 {
+            background-color: red;
+        }
+
+        #box-2 {
+            background-color: green;
+        }
+
+        #box-3 {
+            background-color: blue;
+        }
+
+        @media (max-width: 600px) {
+            .boxes {
+                flex-direction: column;
+                row-gap: 10px;
+            }
+            /* .boxes {
+                  grid-template-columns: 1fr; 
+            padding: 20px;
+            height: auto;
+            } */
+
+            .box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="boxes">
+        <div class="box box-1" id="box-1">BOX_1</div>
+        <div class="box box-2" id="box-2">BOX_2</div>
+        <div class="box box-3" id="box-3">BOX_3</div>
+    </div>
+  
+</body>
+
+</html>
