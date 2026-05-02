@@ -1,0 +1,63 @@
+.avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 1000px;
+}
+
+.autocomplete-result-item {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+}
+.autocomplete-result-item:hover {
+    background-color: rgb(56, 50, 50);
+}
+
+.autocomplete-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 14px;
+}
+
+.autocomplete-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 14px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.autocomplete-results {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border: 1px solid gray;
+    border-top: none;
+    position: absolute;
+    bottom: 10;
+    margin-top: 0;
+    background-color: rgb(70, 64, 64);
+    box-sizing: border-box;
+}
+
+.recent-list {
+    list-style: none;
+    display: flex;
+   justify-content: start;
+   gap:8px;
+   align-items: center;
+   flex-wrap: wrap;
+
+}
+
+.recent-item {
+    background-color: rgb(21, 20, 20);
+    padding: 6px 10px;
+    border-radius: 14px;
+}

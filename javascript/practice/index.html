@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice</title>
+</head>
+
+<body>
+    <h1>JavaScript Practice</h1>
+    <button id="num-btn">Click to generate numbers from 1 to 10 with delay of 1 sec</button>
+    <ul id="output"></ul>
+    <button id="reverse-btn">Click to generate numbers from 10 to 1 with delay of 1 sec</button>
+    <ul id="reverse-output"></ul>
+    <h2>Advanced form elements</h2>
+    <input type="file" />
+    <input type="date" />
+    <input type="email" />
+    <input id="range" type="range" min="0" max="100" value="20" />
+    <p id="range-value">20</p>
+    <input type="number" />
+    <input type="color" value="#000000" oninput="handlechange(this)" />
+    <h2>Media Api's</h2>
+    <video controls>
+        <source src="sample.mp4" type="video/mp4">
+    </video>
+    <audio controls>
+        <source src="sample.mp3" type="audio/mpeg">
+    </audio>
+    <h2>Canvas API</h2>
+    <canvas id="canvas" width="200" height="200"></canvas>
+
+    <iframe 
+  width="100%" 
+  height="400" 
+  frameborder="0" 
+  src="https://maps.app.goo.gl/ENTgsrunFutEYzTcA">
+</iframe>
+    <!-- <script src="script.js"></script> -->
+    <script>
+        function handlechange(event) {
+            console.log(event.value);
+            document.body.style.backgroundColor = event.value;
+        }
+        document.getElementById('range').addEventListener('input', () => {
+            document.getElementById('range-value').textContent = document.getElementById('range').value;
+        })
+
+
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "blue";
+        ctx.fillRect(50, 50, 100, 100);
+
+
+        // Basic implementation checking for support and handling success/error
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(
+                (pos) => console.log(`Lat: ${pos.coords.latitude}, Lon: ${pos.coords.longitude}`),
+                (err) => console.error(`Error: ${err.message}`)
+            );
+        }
+
+    </script>
+</body>
+
+</html>

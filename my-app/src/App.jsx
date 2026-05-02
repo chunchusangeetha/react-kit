@@ -1,7 +1,8 @@
-import Parent from './Parent'
+//import Parent from './Parent'
 import './App.css'
-import UserList from './UserList'
-import DeepCompare from './DeepCompare'
+//import UserList from './UserList'
+//import DeepCompare from './DeepCompare'
+import AutoComplete from './AutoComplete'
 
 function App() {
 
@@ -116,10 +117,11 @@ promises
 
   return (
     <>
-      <h1>React Practice</h1>
-      <Parent/>
-      <UserList/>
-      <DeepCompare/>
+    <AutoComplete/>
+      {/* <h1>React Practice</h1> */}
+      {/* <Parent/> */}
+      {/* <UserList/> */}
+      {/* <DeepCompare/> */}
     </>
 
   )
